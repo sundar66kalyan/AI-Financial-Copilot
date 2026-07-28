@@ -1,4 +1,4 @@
-from backend.app.services.ai_service import AIService
+from app.services.ai_service import AIService
 
 
 class FinanceCopilotAgent:

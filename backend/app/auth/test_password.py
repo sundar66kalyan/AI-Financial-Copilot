@@ -1,4 +1,4 @@
-from backend.app.auth.password import (
+from app.auth.password import (
     hash_password,
     verify_password
 )

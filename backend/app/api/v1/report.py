@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 
-from backend.app.database.db import get_db
-from backend.app.dependencies.auth import get_current_user
+from app.database.db import get_db
+from app.dependencies.auth import get_current_user
 
-from backend.app.services.ai_service import AIService
-from backend.app.reports.pdf_report import PDFReportGenerator
+from app.services.ai_service import AIService
+from app.reports.pdf_report import PDFReportGenerator
 
 router = APIRouter(
     prefix="/api/v1/report",

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from backend.app.repositories.transaction_repository import TransactionRepository
-from backend.app.schemas.transaction import TransactionCreate
+from app.repositories.transaction_repository import TransactionRepository
+from app.schemas.transaction import TransactionCreate
 
 
 class TransactionService:

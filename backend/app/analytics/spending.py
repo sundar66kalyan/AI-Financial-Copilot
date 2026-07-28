@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 
-from backend.app.models.transaction import Transaction
-from backend.app.models.category import Category
+from app.models.transaction import Transaction
+from app.models.category import Category
 
 
 class SpendingAnalytics:

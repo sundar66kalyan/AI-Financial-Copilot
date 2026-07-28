@@ -1,15 +1,15 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.database.db import get_db
-from backend.app.dependencies.auth import get_current_user
+from app.database.db import get_db
+from app.dependencies.auth import get_current_user
 
-from backend.app.schemas.copilot import (
+from app.schemas.copilot import (
     CopilotRequest,
     CopilotResponse,
 )
 
-from backend.app.agents.finance_copilot_agent import (
+from app.agents.finance_copilot_agent import (
     FinanceCopilotAgent,
 )
 

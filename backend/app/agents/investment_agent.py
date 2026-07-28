@@ -1,4 +1,4 @@
-from backend.app.llm.gemini_client import generate_response
+from app.llm.gemini_client import generate_response
 
 
 class InvestmentAgent:

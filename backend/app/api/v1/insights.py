@@ -1,17 +1,17 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.database.db import get_db
-from backend.app.dependencies.auth import get_current_user
+from app.database.db import get_db
+from app.dependencies.auth import get_current_user
 
-from backend.app.analytics.spending import SpendingAnalytics
-from backend.app.analytics.cashflow import CashFlowAnalyzer
-from backend.app.analytics.financial_health import FinancialHealthAnalyzer
-from backend.app.analytics.ai_insights import AIInsights
+from app.analytics.spending import SpendingAnalytics
+from app.analytics.cashflow import CashFlowAnalyzer
+from app.analytics.financial_health import FinancialHealthAnalyzer
+from app.analytics.ai_insights import AIInsights
 
-from backend.app.services.account_service import AccountService
-from backend.app.services.transaction_service import TransactionService
-from backend.app.services.budget_service import BudgetService
+from app.services.account_service import AccountService
+from app.services.transaction_service import TransactionService
+from app.services.budget_service import BudgetService
 
 
 router = APIRouter(

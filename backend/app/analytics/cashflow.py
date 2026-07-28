@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from backend.app.models.transaction import Transaction
+from app.models.transaction import Transaction
 
 
 class CashFlowAnalyzer:

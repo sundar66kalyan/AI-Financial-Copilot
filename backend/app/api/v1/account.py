@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.database.session import get_db
-from backend.app.dependencies.auth import get_current_user
-from backend.app.schemas.account import AccountCreate, AccountResponse
-from backend.app.services.account_service import AccountService
+from app.database.session import get_db
+from app.dependencies.auth import get_current_user
+from app.schemas.account import AccountCreate, AccountResponse
+from app.services.account_service import AccountService
 
 router = APIRouter(
     prefix="/api/v1/accounts",

@@ -9,7 +9,7 @@ from sqlalchemy import String
 from sqlalchemy import Text
 from sqlalchemy.orm import relationship
 
-from backend.app.database.db import Base
+from app.database.db import Base
 
 
 class Transaction(Base):

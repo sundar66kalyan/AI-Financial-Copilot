@@ -1,10 +1,10 @@
 from sqlalchemy.orm import Session
 
-from backend.app.auth.jwt_handler import create_access_token
-from backend.app.auth.password import hash_password, verify_password
-from backend.app.repositories.user_repository import UserRepository
-from backend.app.schemas.token import Token
-from backend.app.schemas.user import UserCreate, UserLogin
+from app.auth.jwt_handler import create_access_token
+from app.auth.password import hash_password, verify_password
+from app.repositories.user_repository import UserRepository
+from app.schemas.token import Token
+from app.schemas.user import UserCreate, UserLogin
 
 
 class AuthService:

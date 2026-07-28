@@ -1,6 +1,6 @@
 from google import genai
 from google.genai.errors import ServerError
-from backend.app.core.config import settings
+from app.core.config import settings
 
 client = genai.Client(api_key=settings.GOOGLE_API_KEY)
 

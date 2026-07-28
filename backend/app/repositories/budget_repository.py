@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from backend.app.models.budget import Budget
-from backend.app.schemas.budget import BudgetCreate
+from app.models.budget import Budget
+from app.schemas.budget import BudgetCreate
 
 
 class BudgetRepository:

@@ -1,6 +1,6 @@
-from backend.app.database.db import SessionLocal
-from backend.app.schemas.user import UserCreate
-from backend.app.services.auth_service import AuthService
+from app.database.db import SessionLocal
+from app.schemas.user import UserCreate
+from app.services.auth_service import AuthService
 
 db = SessionLocal()
 

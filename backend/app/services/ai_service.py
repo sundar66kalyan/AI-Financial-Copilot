@@ -1,12 +1,12 @@
-from backend.app.analytics.spending import SpendingAnalytics
-from backend.app.analytics.cashflow import CashFlowAnalyzer
-from backend.app.analytics.financial_health import FinancialHealthAnalyzer
+from app.analytics.spending import SpendingAnalytics
+from app.analytics.cashflow import CashFlowAnalyzer
+from app.analytics.financial_health import FinancialHealthAnalyzer
 
-from backend.app.llm.gemini_client import generate_response
+from app.llm.gemini_client import generate_response
 
-from backend.app.services.account_service import AccountService
-from backend.app.services.transaction_service import TransactionService
-from backend.app.services.budget_service import BudgetService
+from app.services.account_service import AccountService
+from app.services.transaction_service import TransactionService
+from app.services.budget_service import BudgetService
 
 
 class AIService:

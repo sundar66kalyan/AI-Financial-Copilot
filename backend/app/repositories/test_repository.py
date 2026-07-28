@@ -1,5 +1,5 @@
-from backend.app.database.db import SessionLocal
-from backend.app.repositories.user_repository import UserRepository
+from app.database.db import SessionLocal
+from app.repositories.user_repository import UserRepository
 
 db = SessionLocal()
 

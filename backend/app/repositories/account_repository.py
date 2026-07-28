@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from backend.app.models.account import Account
-from backend.app.schemas.account import AccountCreate
+from app.models.account import Account
+from app.schemas.account import AccountCreate
 
 
 class AccountRepository:

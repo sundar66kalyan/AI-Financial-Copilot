@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.database.session import get_db
-from backend.app.dependencies.auth import get_current_user
-from backend.app.schemas.transaction import (
+from app.database.session import get_db
+from app.dependencies.auth import get_current_user
+from app.schemas.transaction import (
     TransactionCreate,
     TransactionResponse,
 )
-from backend.app.services.transaction_service import TransactionService
+from app.services.transaction_service import TransactionService
 
 router = APIRouter(
     prefix="/api/v1/transactions",

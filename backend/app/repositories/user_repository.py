@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from backend.app.models.user import User
-from backend.app.schemas.user import UserCreate
+from app.models.user import User
+from app.schemas.user import UserCreate
 
 
 class UserRepository:

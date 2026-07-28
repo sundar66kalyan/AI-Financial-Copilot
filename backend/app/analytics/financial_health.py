@@ -1,5 +1,5 @@
-from backend.app.analytics.spending import SpendingAnalytics
-from backend.app.analytics.cashflow import CashFlowAnalyzer
+from app.analytics.spending import SpendingAnalytics
+from app.analytics.cashflow import CashFlowAnalyzer
 
 
 class FinancialHealthAnalyzer:
