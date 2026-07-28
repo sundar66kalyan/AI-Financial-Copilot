@@ -2,6 +2,7 @@ from sqlalchemy import Boolean
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy.orm import relationship
 
 from backend.app.database.db import Base
 
@@ -35,5 +36,29 @@ class User(Base):
 
     is_active = Column(
         Boolean,
-        default=True
+        default=True,
+    )
+
+    accounts = relationship(
+        "Account",
+        back_populates="user",
+        cascade="all, delete",
+    )
+
+    categories = relationship(
+        "Category",
+        back_populates="user",
+        cascade="all, delete",
+    )
+
+    transactions = relationship(
+        "Transaction",
+        back_populates="user",
+        cascade="all, delete",
+    )
+
+    budgets = relationship(
+        "Budget",
+        back_populates="user",
+        cascade="all, delete",
     )
