@@ -11,7 +11,7 @@ __pycache__/
 *.db
 __pycache__/
 .venv/
-reports/
+
 
 .env
 .venv/
