@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
 
-class ChatRequest(BaseModel):
+class CopilotRequest(BaseModel):
     question: str
 
 
-class ChatResponse(BaseModel):
+class CopilotResponse(BaseModel):
     answer: str

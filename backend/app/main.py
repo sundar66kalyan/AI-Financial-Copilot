@@ -8,6 +8,9 @@ from backend.app.api.v1.transaction import router as transaction_router
 from backend.app.api.v1.budget import router as budget_router
 from backend.app.api.v1.analytics import router as analytics_router
 from backend.app.api.v1.copilot import router as copilot_router
+from backend.app.api.v1.investment import router as investment_router
+from backend.app.api.v1.report import router as report_router
+from backend.app.api.v1.insights import router as insights_router
 
 import backend.app.models
 
@@ -24,8 +27,9 @@ app.include_router(transaction_router)
 app.include_router(budget_router)
 app.include_router(analytics_router)
 app.include_router(copilot_router, prefix="/api/v1")
-
-
+app.include_router(investment_router)
+app.include_router(report_router)
+app.include_router(insights_router)
 @app.get("/")
 def home():
 

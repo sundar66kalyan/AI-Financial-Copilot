@@ -6,3 +6,16 @@ __pycache__/
 .env
 .idea/
 .vscode/
+
+.env
+*.db
+__pycache__/
+.venv/
+reports/
+
+.env
+.venv/
+__pycache__/
+*.pyc
+financial_report.pdf
+backend/database/sqlite/*.db

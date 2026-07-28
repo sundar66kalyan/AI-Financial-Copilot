@@ -4,11 +4,13 @@ from sqlalchemy.orm import Session
 from backend.app.database.db import get_db
 from backend.app.dependencies.auth import get_current_user
 
-from backend.app.agents.finance_copilot_agent import FinanceCopilotAgent
-
 from backend.app.schemas.copilot import (
-    ChatRequest,
-    ChatResponse,
+    CopilotRequest,
+    CopilotResponse,
+)
+
+from backend.app.agents.finance_copilot_agent import (
+    FinanceCopilotAgent,
 )
 
 router = APIRouter(
@@ -19,10 +21,10 @@ router = APIRouter(
 
 @router.post(
     "/chat",
-    response_model=ChatResponse,
+    response_model=CopilotResponse,
 )
 def chat(
-    request: ChatRequest,
+    request: CopilotRequest,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -33,4 +35,6 @@ def chat(
         question=request.question,
     )
 
-    return ChatResponse(answer=answer)
+    return CopilotResponse(
+        answer=answer,
+    )
