@@ -6,6 +6,7 @@ from backend.app.api.v1.account import router as account_router
 from backend.app.api.v1.category import router as category_router
 from backend.app.api.v1.transaction import router as transaction_router
 from backend.app.api.v1.budget import router as budget_router
+from backend.app.api.v1.analytics import router as analytics_router
 
 import backend.app.models
 
@@ -20,7 +21,7 @@ app.include_router(account_router)
 app.include_router(category_router)
 app.include_router(transaction_router)
 app.include_router(budget_router)
-
+app.include_router(analytics_router)
 
 @app.get("/")
 def home():
