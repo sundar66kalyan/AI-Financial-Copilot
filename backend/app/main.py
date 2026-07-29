@@ -17,10 +17,6 @@ import app.models
 Base.metadata.create_all(bind=engine)
 from app.core.config import settings
 
-print("=" * 60)
-print("DATABASE_URL:", settings.DATABASE_URL)
-print("=" * 60)
-
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
