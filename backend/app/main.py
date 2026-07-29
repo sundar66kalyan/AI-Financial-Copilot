@@ -15,6 +15,11 @@ from app.api.v1.insights import router as insights_router
 import app.models
 
 Base.metadata.create_all(bind=engine)
+from app.core.config import settings
+
+print("=" * 60)
+print("DATABASE_URL:", settings.DATABASE_URL)
+print("=" * 60)
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -30,6 +35,7 @@ app.include_router(copilot_router, prefix="/api/v1")
 app.include_router(investment_router)
 app.include_router(report_router)
 app.include_router(insights_router)
+
 
 @app.get("/")
 def home():
