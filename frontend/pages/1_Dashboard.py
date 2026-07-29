@@ -21,11 +21,34 @@ headers = {
 }
 
 # ----------------------------
-# Load Data
+# Load Data with Caching
 # ----------------------------
-accounts = requests.get(ACCOUNT_URL, headers=headers).json()
-transactions = requests.get(TRANSACTION_URL, headers=headers).json()
-budgets = requests.get(BUDGET_URL, headers=headers).json()
+@st.cache_data(ttl=60)
+def load_dashboard_data(headers):
+
+    accounts = requests.get(
+        ACCOUNT_URL,
+        headers=headers,
+        timeout=10
+    ).json()
+
+    transactions = requests.get(
+        TRANSACTION_URL,
+        headers=headers,
+        timeout=10
+    ).json()
+
+    budgets = requests.get(
+        BUDGET_URL,
+        headers=headers,
+        timeout=10
+    ).json()
+
+    return accounts, transactions, budgets
+
+with st.spinner("Loading dashboard..."):
+
+    accounts, transactions, budgets = load_dashboard_data(headers)
 
 # ----------------------------
 # KPI Cards

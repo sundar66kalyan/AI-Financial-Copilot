@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import requests
 
-from config import REPORT_URL
+from config import REPORT_URL, DOWNLOAD_REPORT_URL
 
 st.set_page_config(
     page_title="AI Financial Report",
@@ -63,23 +63,25 @@ if st.button(
                 ):
                     st.markdown(data["report"])
 
-                pdf_file = data.get("pdf")
+                download_response = requests.get(
+                    DOWNLOAD_REPORT_URL,
+                    headers=headers,
+                    timeout=120
+                )
 
-                if pdf_file and os.path.exists(pdf_file):
+                if download_response.status_code == 200:
 
-                    with open(pdf_file, "rb") as file:
-
-                        st.download_button(
-                            label="📥 Download PDF Report",
-                            data=file,
-                            file_name="financial_report.pdf",
-                            mime="application/pdf",
-                            use_container_width=True
-                        )
+                    st.download_button(
+                        label="📥 Download PDF Report",
+                        data=download_response.content,
+                        file_name="financial_report.pdf",
+                        mime="application/pdf",
+                        use_container_width=True
+                    )
 
                 else:
 
-                    st.info("PDF file is not available.")
+                    st.error("Unable to download PDF report.")
 
             else:
 

@@ -10,27 +10,30 @@ password = st.text_input("Password", type="password")
 
 if st.button("Login"):
 
-    response = requests.post(
-        LOGIN_URL,
-        data={
-            "username": email,
-            "password": password
-        }
-    )
+    with st.spinner("Logging in..."):
 
-    if response.status_code == 200:
+        response = requests.post(
+            LOGIN_URL,
+            data={
+                "username": email,
+                "password": password
+            },
+            timeout=15
+        )
 
-        token = response.json()["access_token"]
+        if response.status_code == 200:
 
-        st.session_state["access_token"] = token
-        st.session_state["logged_in"] = True
+            token = response.json()["access_token"]
 
-        st.success("Login Successful ✅")
-        st.switch_page("pages/1_Dashboard.py")
+            st.session_state["access_token"] = token
+            st.session_state["logged_in"] = True
 
-    else:
+            st.success("Login Successful ✅")
+            st.switch_page("pages/1_Dashboard.py")
 
-        st.error("Invalid Email or Password")
+        else:
+
+            st.error("Invalid Email or Password")
 
 st.divider()
 

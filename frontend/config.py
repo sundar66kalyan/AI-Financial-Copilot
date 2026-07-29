@@ -2,7 +2,7 @@ import os
 
 BACKEND_URL = os.getenv(
     "BACKEND_URL",
-    "http://127.0.0.1:8000"
+    "https://ai-financial-copilot-t37m.onrender.com"
 )
 
 LOGIN_URL = f"{BACKEND_URL}/api/v1/auth/login"
