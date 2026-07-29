@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000"
+from config import COPILOT_URL
 
 st.set_page_config(
     page_title="AI Financial Copilot",
@@ -59,7 +59,7 @@ if prompt:
         try:
 
             response = requests.post(
-                f"{API_URL}/api/v1/copilot/chat",
+                COPILOT_URL,
                 headers=headers,
                 json={
                     "question": prompt

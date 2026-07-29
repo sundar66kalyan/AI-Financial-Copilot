@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000"
+from config import REPORT_URL
 
 st.set_page_config(
     page_title="AI Financial Report",
@@ -42,7 +42,7 @@ if st.button(
         try:
 
             response = requests.get(
-                f"{API_URL}/api/v1/report/generate",
+                REPORT_URL,
                 headers=headers,
                 timeout=120
             )

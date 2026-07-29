@@ -1,7 +1,11 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000"
+from config import (
+    SPENDING_URL,
+    HEALTH_URL,
+    BACKEND_URL,
+)
 
 st.set_page_config(
     page_title="Analytics",
@@ -30,7 +34,7 @@ st.subheader("💰 Spending Summary")
 try:
 
     response = requests.get(
-        f"{API_URL}/api/v1/analytics/spending",
+        SPENDING_URL,
         headers=headers,
         timeout=10
     )
@@ -91,7 +95,7 @@ st.subheader("❤️ Financial Health")
 try:
 
     response = requests.get(
-        f"{API_URL}/api/v1/analytics/financial-health",
+        HEALTH_URL,
         headers=headers,
         timeout=10
     )
@@ -138,7 +142,7 @@ st.subheader("🤖 AI Insights")
 try:
 
     response = requests.get(
-        f"{API_URL}/api/v1/insights/",
+        f"{BACKEND_URL}/api/v1/insights/",
         headers=headers,
         timeout=15
     )
