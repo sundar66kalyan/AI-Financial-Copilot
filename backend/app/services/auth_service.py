@@ -29,25 +29,25 @@ class AuthService:
     @staticmethod
     def login(db: Session, credentials: UserLogin) -> Token:
 
-        db_user = UserRepository.get_by_email(
-            db,
-            credentials.email,
-        )
+        print("=" * 60)
+        print("LOGIN EMAIL:", credentials.email)
+
+        db_user = UserRepository.get_by_email(db, credentials.email)
+
+        print("DB USER:", db_user)
+
+        if db_user:
+            print("DB EMAIL:", db_user.email)
+            print("PASSWORD MATCH:", verify_password(credentials.password, db_user.password))
+        print("=" * 60)
 
         if db_user is None:
             raise ValueError("Invalid email or password.")
 
-        if not verify_password(
-            credentials.password,
-            db_user.password,
-        ):
+        if not verify_password(credentials.password, db_user.password):
             raise ValueError("Invalid email or password.")
 
-        access_token = create_access_token(
-            {
-                "sub": db_user.email
-            }
-        )
+        access_token = create_access_token({"sub": db_user.email})
 
         return Token(
             access_token=access_token,
